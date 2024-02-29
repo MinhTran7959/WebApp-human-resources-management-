@@ -1,0 +1,69 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachQTCVResult>
+
+@{
+    ViewBag.Title = "ExportData";
+}
+
+<h2>ExportData</h2>
+
+@using (Html.BeginForm("ExportData", "ExportData", FormMethod.Post))
+{
+    <p style="background-color: red; color: white; font-size: 20pt; font-weight: bold; padding: 10px; text-align: center;">
+        Export DataTable
+    </p>
+
+    <table style="background-color: white; width: 100%;">
+        <tr>
+            <th style="border: 2px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayName("MÃ QUÁ TRÌNH CHỨC VỤ")
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayName("MÃ CHỨC VỤ")
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayName("MÃ NHÂN VIÊN")
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayName("THỜI GIAN KẾT THÚC")
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.MaCV)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.MaNV)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.TGBD)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.TGKT)
+                </td>
+            </tr>
+
+        }
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="submit" name="btnExportLicensing" style="width: 140px;"
+                       value="Export" id="exportLicensing" class="button" />
+            </td>
+        </tr>
+    </table>
+    <div>
+        @Html.ActionLink("Back to List", "Index", "Proc_QuaTrinhChucVu")
+    </div>
+}

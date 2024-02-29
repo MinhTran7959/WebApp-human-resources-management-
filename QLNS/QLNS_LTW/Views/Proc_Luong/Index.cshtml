@@ -1,0 +1,32 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachLuongResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_luong.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayName("MỨC LƯƠNG CƠ BẢN")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.MucLuongCB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaLuong }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaLuong }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaLuong })
+        </td>
+    </tr>
+}
+
+</table>

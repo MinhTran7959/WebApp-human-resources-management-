@@ -1,0 +1,73 @@
+﻿@model QLNS_LTW.Models.GetidQTLResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ QUÁ TRÌNH LƯƠNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ LƯƠNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ PHÒNG BAN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPB)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN KẾT THÚC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGKT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

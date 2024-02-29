@@ -1,0 +1,57 @@
+﻿@model QLNS_LTW.Models.GetidTaiKhoanResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết tài khoản</h2></center>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("ID TÀI KHOẢN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("TÀI KHOẢN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MẬT KHẨU")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("QUYỀN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LaQuanTri)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

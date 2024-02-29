@@ -1,0 +1,48 @@
+﻿@model QLNS_LTW.Models.GetidKyHDResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết Họp đồng đã ký</h2></center>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ HỌP ĐỒNG ĐÃ KÝ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayName("MÃ HỌP ĐỒNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("NGÀY KÝ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayKy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,68 @@
+﻿@model QLNS_LTW.Models.ToanBoDanhSachTaiKhoanResult
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<center><h2>Thêm một tài khoản mới</h2></center>
+@using QLNS_LTW.Models;
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaNV, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="col-md-10">
+            @Html.EditorFor(model => model.MaNV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaNV, "", new { @class = "text-danger" })
+        </div>*@
+        <select name="MaNV" style="outline: none">
+            @foreach (var item in TempData["AllMaNV"] as List<ToanBoDanhSachNhanVienResult>)
+            {
+                <option value="@item.MaNV">
+                    @item.MaNV
+                </option>
+            }
+        </select>
+        @*@Html.ValidationMessageFor(item => item.MaNV, "")*@
+    </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TaiKhoan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LaQuanTri, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LaQuanTri, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LaQuanTri, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" onclick="alert('Thêm thành công');" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

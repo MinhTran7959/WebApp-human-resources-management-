@@ -1,0 +1,42 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachKyHDResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_kyhd.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("MÃ HỌP ĐỒNG")
+        </th>
+        <th>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </th>
+        <th>
+            @Html.DisplayName("NGÀY KÝ")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

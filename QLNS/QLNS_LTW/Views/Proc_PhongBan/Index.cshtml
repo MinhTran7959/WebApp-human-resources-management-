@@ -1,0 +1,37 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachPhongBanResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_phongban.cshtml";
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("MÃ PHÒNG BAN")
+        </th>
+        <th>
+            @Html.DisplayName("TÊN PHÒNG BAN")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaPB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenPB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaPB }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaPB }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaPB })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QLNS_LTW.Models.QUATRINHCONGTAC>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Danh sách quá trình công tác</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới một quá trình công tác", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </th>
+        <th>
+            @Html.DisplayName("MÃ PHÒNG BAN")
+        </th>
+        <th>
+            @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+        </th>
+        <th>
+            @Html.DisplayName("THỜI GIAN KẾT THÚC")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaPB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TGBD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TGKT)
+        </td>
+        <td>
+            @Html.ActionLink("Cập nhật", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.id }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

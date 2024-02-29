@@ -1,0 +1,56 @@
+﻿@model QLNS_LTW.Models.GetMaKLResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết kỷ luật</h2></center>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ KỶ LUẬT")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKL)
+        </dd>
+        <dt>
+            @Html.DisplayName("THỜI GIAN KỶ LUẬT")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGian)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("QUYẾT ĐỊNH KỶ LUẬT")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuyetDinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SỐ TIỀN PHẠT")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sotienphat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKL }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

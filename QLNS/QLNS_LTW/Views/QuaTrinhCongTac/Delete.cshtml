@@ -1,0 +1,56 @@
+﻿@model QLNS_LTW.Models.QUATRINHCONGTAC
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa quá trình công tác</h2>
+
+<h3>Bạn có muốn xóa quá trình công tác này?</h3>
+<div>
+    <h4>QUÁ TRÌNH CÔNG TÁC</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ PHÒNG BAN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPB)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN KẾT THÚC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGKT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại quá trình công tác", "Index")
+        </div>
+    }
+</div>

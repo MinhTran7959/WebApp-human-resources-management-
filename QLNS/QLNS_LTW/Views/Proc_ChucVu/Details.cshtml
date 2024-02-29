@@ -1,0 +1,34 @@
+﻿@model QLNS_LTW.Models.GetMaCVResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết chức vụ</h2></center>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("TÊN CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenCV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

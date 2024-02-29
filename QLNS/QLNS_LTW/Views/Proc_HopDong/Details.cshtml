@@ -1,0 +1,58 @@
+﻿@model QLNS_LTW.Models.GetMaHDResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết họp đồng</h2></center>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ HỌP ĐỒNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("VỊ TRÍ LÀM VIỆC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViTri)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("LOẠI HỌP ĐỒNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiHD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI HẠN LÀM VIỆC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiHan)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("TÊN HỌP ĐỒNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHD)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaHD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

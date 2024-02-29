@@ -1,0 +1,117 @@
+﻿@model QLNS_LTW.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/util.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-color: aqua">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" action="~/Proc_TaiKhoan/Login" method="post">
+                    <!-- <span class="login100-form-logo">
+        <i class="zmdi zmdi-landscape"></i>
+    </span> -->
+
+                    <span class="login100-form-title p-b-34 p-t-27">
+                        Đăng nhập
+                    </span>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        @*<input class="input100" type="text" name="username" placeholder="Tài khoản">*@
+                        @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "input100", placeholder = "Tài khoản", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+                        <span class="" data-placeholder="&#xf207;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        @*<input class="input100" type="password" name="pass" placeholder="Mật khẩu">*@
+                        @Html.PasswordFor(model => model.MatKhau, new { @class = "input100", placeholder = "Mật khẩu", required = "required" })
+                        @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                        <span class="" data-placeholder="&#xf191;"></span>
+                    </div>
+
+                    <!-- <div class="contact100-form-checkbox">
+        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+        <label class="label-checkbox100" for="ckb1">
+
+        </label>
+    </div> -->
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
+                            Đăng nhập
+                        </button>
+                    </div>
+
+                    <!-- <div class="text-center p-t-90">
+        <a class="txt1" href="#">
+            Forgot Password?
+        </a>
+    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+
+    <script src="~/Scripts/login.js"></script>
+
+</body>
+</html>
+@*<center><h2>Login</h2></center>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TaiKhoan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}*@
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

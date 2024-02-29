@@ -1,0 +1,56 @@
+﻿@model QLNS_LTW.Models.GetidQTCVResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết QUÁ TRÌNH CHỨC VỤ</h2></center>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ QUÁ TRÌNH CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayName("MÃ CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN KẾT THÚC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGKT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachHopDongResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_hopdong.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayName("VỊ TRÍ LÀM VIỆC")
+        </th>
+        <th>
+            @Html.DisplayName("LOẠI HỌP ĐỒNG")
+        </th>
+        <th>
+            @Html.DisplayName("THỜI HẠN LÀM VIỆC")
+        </th>
+        <th>
+            @Html.DisplayName("TÊN HỌP ĐỒNG")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+   
+    <td>
+        @Html.DisplayFor(modelItem => item.ViTri)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoaiHD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ThoiHan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenHD)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaHD }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaHD }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaHD })
+    </td>
+</tr>
+}
+
+</table>

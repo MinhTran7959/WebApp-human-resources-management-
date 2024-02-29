@@ -1,0 +1,31 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachChucVuResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_chucvu.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("TÊN CHỨC VỤ")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.TenCV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaCV }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaCV }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaCV })
+        </td>
+    </tr>
+}
+
+</table>

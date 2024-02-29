@@ -1,0 +1,56 @@
+﻿@model QLNS_LTW.Models.QUATRINHCHUCVU
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa quá trình chức vụ</h2>
+
+<h3>Bạn có muốn xóa quá trình chức vụ này?</h3>
+<div>
+    <h4>QUÁ TRÌNH CHỨC VỤ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN KẾT THÚC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGKT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại danh sách quá trình chức vụ", "Index")
+        </div>
+    }
+</div>

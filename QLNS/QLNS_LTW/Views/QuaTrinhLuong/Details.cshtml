@@ -1,0 +1,66 @@
+﻿@model QLNS_LTW.Models.QUATRINHLUONG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết quá trình lương</h2>
+
+<div>
+    <h4>QUÁ TRÌNH LƯƠNG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ LƯƠNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ PHÒNG BAN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPB)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ CHỨC VỤ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN BẮT ĐẦU")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGBD)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN KẾT THÚC")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGKT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Quay lại danh sách quá trình lương", "Index")
+</p>

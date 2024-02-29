@@ -1,0 +1,58 @@
+﻿@model QLNS_LTW.Models.GetMaKTResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GetMaKTResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ KHEN THƯỞNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKT)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("THỜI GIAN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGian)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("QUYẾT ĐỊNH")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuyetDinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SỐ TIỀN THƯỞNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sotienthuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKT}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

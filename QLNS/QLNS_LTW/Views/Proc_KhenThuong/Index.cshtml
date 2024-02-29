@@ -1,0 +1,46 @@
+﻿@model IEnumerable<QLNS_LTW.Models.ToanBoDanhSachKhenThuongResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_khenthuong.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayName("THỜI GIAN KHEN THƯỞNG")
+        </th>
+        <th>
+            @Html.DisplayName("QUYẾT ĐỊNH KHEN THƯỞNG")
+        </th>
+        <th>
+            @Html.DisplayName("MÃ NHÂN VIÊN")
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGian)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuyetDinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNV)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaKT }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaKT }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaKT })
+        </td>
+    </tr>
+}
+
+</table>

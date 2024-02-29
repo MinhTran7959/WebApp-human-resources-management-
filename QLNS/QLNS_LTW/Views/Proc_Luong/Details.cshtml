@@ -1,0 +1,33 @@
+﻿@model QLNS_LTW.Models.GetMaLuongResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h2>Chi tiết mức lương</h2></center>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("MÃ MỨC LƯƠNG")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLuong)
+        </dd>
+        <dt>
+            @Html.DisplayName("MỨC LƯƠNG CƠ BẢN")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MucLuongCB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLuong }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
